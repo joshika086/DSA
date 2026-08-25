@@ -1,17 +1,25 @@
 class Solution {
     public int[] sortedSquares(int[] nums) {
-        for(int i=0;i<nums.length;i++){
-           nums[i]=nums[i]*nums[i];
-        }
-        for(int i=1;i<nums.length;i++){
-            int key=nums[i];
-            int j=i-1;
-            while(j>=0 && nums[j]>key){
-                nums[j+1]=nums[j];
-                j--;
+
+        int[] result = new int[nums.length];
+
+        int left = 0;
+        int right = nums.length - 1;
+        int k = nums.length - 1;
+
+        while (left <= right) {
+
+            if (Math.abs(nums[left]) > Math.abs(nums[right])) {
+                result[k] = nums[left] * nums[left];
+                left++;
+            } else {
+                result[k] = nums[right] * nums[right];
+                right--;
             }
-            nums[j+1]=key;
+
+            k--;
         }
-        return nums;
+
+        return result;
     }
 }
