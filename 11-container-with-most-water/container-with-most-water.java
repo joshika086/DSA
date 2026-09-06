@@ -5,11 +5,12 @@ class Solution {
         int area=1;
         int maxArea=0;
         while(left<right){
+
          area = (right - left) * Math.min(height[left], height[right]);
          maxArea = Math.max(maxArea, area);
-if (height[left] < height[right]) {
-    left++;
-} else {
+        if (height[left] < height[right]) {
+           left++;
+      } else {
     right--;
 }
         }
