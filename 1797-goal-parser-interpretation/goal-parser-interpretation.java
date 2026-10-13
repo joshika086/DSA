@@ -1,7 +1,8 @@
+
 class Solution {
-    public String interpret(String c) {
-      c= c.replace("()","o");
-      c=c.replace("(al)","al");
-       return c;
+    public String interpret(String command) {
+        command = command.replace("()", "o");
+        command = command.replace("(al)", "al");
+        return command;
     }
 }
