@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public int[] createTargetArray(int[] nums, int[] index) {
         ArrayList<Integer> list = new ArrayList<>();
